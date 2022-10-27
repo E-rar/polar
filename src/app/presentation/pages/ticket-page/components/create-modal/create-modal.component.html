@@ -1,0 +1,33 @@
+<div class="background" (click)="this.modal.setModalState()" *ngIf="this.modal.modalOpen">
+  <div class="modal">
+    <form action="">
+      <div class="form__group field">
+        <input
+        #title
+          type="input"
+          class="form__field"
+          placeholder="Name"
+          name="name"
+          id="name"
+          required
+        />
+        <label for="name" class="form__label">Title</label>
+      </div>
+      <div class="form__group field">
+        <input
+            #content
+          type="input"
+          class="form__field"
+          placeholder="Name"
+          name="name"
+          id="name"
+          required
+        />
+        <label for="name" class="form__label">Content</label>
+      </div>
+      <div class="button-container">
+        <button type="submit" (click)="this.ticket.addTicket({header:'bing',footer:'bong'})">Save</button>
+      </div>
+    </form>
+  </div>
+</div>

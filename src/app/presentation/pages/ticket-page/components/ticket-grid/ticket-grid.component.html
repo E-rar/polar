@@ -1,0 +1,25 @@
+<div class="grid-container">
+    <div class="backlog" >
+        <h3>Backlog</h3>
+    <ng-container *ngFor="let ticket of this.tickets">
+        <app-ticket header={{ticket.header}} footer ={{ticket.footer}}></app-ticket>
+    </ng-container>
+    </div>
+    <div class="progress">
+        <h3>Progress</h3>
+        <app-ticket></app-ticket>
+        <app-ticket></app-ticket>
+    </div>
+    <div class="review">
+        <h3>Review</h3>
+        <app-ticket></app-ticket>
+    </div>
+    <div class="resolved">
+        <h3>Resolved</h3>
+        <app-ticket></app-ticket>
+    </div>
+    <div class="done">
+        <h3>Done</h3>
+        <app-ticket></app-ticket>
+    </div>
+</div>
