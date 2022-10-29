@@ -9,7 +9,6 @@ import { Ticket } from 'src/app/business-domain/interfaces/ticket';
 })
 export class TicketGridComponent implements OnInit {
 
-  public tickets : Ticket[] = this.ticket.getTickets();
   constructor(public ticket:TicketService) { }
 
   ngOnInit(): void {
