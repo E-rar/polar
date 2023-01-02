@@ -5,10 +5,6 @@
 
 .grid-container{
     display: grid;
-    // grid-template-columns: repeat(5, 1fr);
-    // grid-template-rows: 1fr;
-    // grid-column-gap: 10px;
-    // grid-row-gap: 0px;
     grid-template-areas: 'todo progress review resolved done';
     gap: 10px;
 }
@@ -44,7 +40,7 @@ h3{
   .example-list {
     border: solid 1px #ccc;
     min-height: 60px;
-    background: rgba(255, 255, 255, 0.719);
+    background: rgba(255, 255, 255, 0);
     border-radius: 4px;
     overflow: hidden;
     display: block;
@@ -61,7 +57,7 @@ h3{
     justify-content: space-between;
     box-sizing: border-box;
     cursor: move;
-    background: rgba(255, 255, 255, 0);
+    background: rgba(255, 255, 255, 0.719);
     font-size: 14px;
   }
   
