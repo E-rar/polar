@@ -8,6 +8,7 @@ import {TicketComponent} from './presentation/pages/ticket-page/components/ticke
 import { TicketGridComponent } from './presentation/pages/ticket-page/components/ticket-grid/ticket-grid.component';
 import { NavbarComponent } from './presentation/pages/ticket-page/components/navbar/navbar.component';
 import { CreateModalComponent } from './presentation/pages/ticket-page/components/create-modal/create-modal.component'
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CreateModalComponent } from './presentation/pages/ticket-page/component
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]

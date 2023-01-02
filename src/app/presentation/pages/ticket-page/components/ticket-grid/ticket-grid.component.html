@@ -1,25 +1,77 @@
 <div class="grid-container">
-    <div class="backlog" >
-        <h3>Backlog</h3>
-    <ng-container *ngFor="let ticket of this.tickets">
-        <app-ticket header={{ticket.header}} footer ={{ticket.footer}}></app-ticket>
-    </ng-container>
+  <div class="todo">
+    <h3>ToDo</h3>
+    <div
+      cdkDropList
+      #todoList="cdkDropList"
+      [cdkDropListData]="todo"
+      [cdkDropListConnectedTo]="[progressList]"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)"
+    >
+      <div class="example-box" *ngFor="let item of todo" cdkDrag>
+        {{ item }}
+      </div>
     </div>
-    <div class="progress">
-        <h3>Progress</h3>
-        <app-ticket></app-ticket>
-        <app-ticket></app-ticket>
+  </div>
+  <div class="progress">
+    <h3>Progress</h3>
+    <div
+      cdkDropList
+      #progressList="cdkDropList"
+      [cdkDropListData]="progress"
+      [cdkDropListConnectedTo]="[todoList, reviewList]"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)"
+    >
+      <div class="example-box" *ngFor="let item of progress" cdkDrag>
+        {{ item }}
+      </div>
     </div>
-    <div class="review">
-        <h3>Review</h3>
-        <app-ticket></app-ticket>
+  </div>
+  <div class="review">
+    <h3>Review</h3>
+    <div
+      cdkDropList
+      #reviewList="cdkDropList"
+      [cdkDropListData]="review"
+      [cdkDropListConnectedTo]="[progressList, resolvedList]"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)"
+    >
+      <div class="example-box" *ngFor="let item of review" cdkDrag>
+        {{ item }}
+      </div>
     </div>
-    <div class="resolved">
-        <h3>Resolved</h3>
-        <app-ticket></app-ticket>
+  </div>
+  <div class="resolved">
+    <h3>Resolved</h3>
+    <div
+      cdkDropList
+      #resolvedList="cdkDropList"
+      [cdkDropListData]="resolved"
+      [cdkDropListConnectedTo]="[reviewList, doneList]"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)"
+    >
+      <div class="example-box" *ngFor="let item of resolved" cdkDrag>
+        {{ item }}
+      </div>
     </div>
-    <div class="done">
-        <h3>Done</h3>
-        <app-ticket></app-ticket>
+  </div>
+  <div class="done">
+    <h3>Done</h3>
+    <div
+      cdkDropList
+      #doneList="cdkDropList"
+      [cdkDropListData]="done"
+      [cdkDropListConnectedTo]="[resolvedList]"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)"
+    >
+      <div class="example-box" *ngFor="let item of done" cdkDrag>
+        {{ item }}
+      </div>
     </div>
+  </div>
 </div>
